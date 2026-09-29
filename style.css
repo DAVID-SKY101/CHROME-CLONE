@@ -16,7 +16,7 @@ body {
 /* TOP BAR */
 
 .top-bar {
-    height: 20px;
+    height: 7vh;
     display: flex;
     justify-content: flex-end;
     align-items: center;
