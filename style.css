@@ -6,8 +6,13 @@
 
 body {
     min-height: 100vh;
-    background: url('google2.jpg') no-repeat center center fixed;
-    background-size: cover;
+    background:
+        radial-gradient(ellipse at 12% 8%, rgba(143, 91, 255, 0.42), transparent 38%),
+        radial-gradient(ellipse at 87% 16%, rgba(255, 76, 164, 0.32), transparent 40%),
+        radial-gradient(ellipse at 71% 88%, rgba(118, 56, 205, 0.28), transparent 42%),
+        radial-gradient(ellipse at 45% 48%, rgba(88, 38, 112, 0.22), transparent 62%),
+        linear-gradient(135deg, #100a20 0%, #25102f 48%, #180b25 100%);
+    background-attachment: fixed;
     color: #202124;
 }
 
@@ -26,7 +31,7 @@ body {
 }
 
 .top-links a {
-    color: red;
+    color: #fff;
     font-size: 14px;
     text-decoration: none;
 }
@@ -40,26 +45,31 @@ body {
 }
 
 .apps-button {
-    width: 40px;
-    height: 40px;
-    color: #202124;
-    font-size: 25px !important;
+    width: 41px;
+    height: 41px;
+    color: #fff;
+}
+
+.apps-button svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
 }
 
 .apps-button:hover {
-    background-color: #202124;
+    background-color: rgba(255, 255, 255, 0.16);
 }
 
 .profile-button {
     width: 38px;
     height: 38px;
-    background-color: red;
+    background-color: #1a73e8;
     color: white !important;
     font-size: 18px !important;
 }
 
 .profile-button:hover {
-    background-color: #242120;
+    background-color: #1765cc;
 }
 
 /* BUTTONS */
@@ -78,7 +88,7 @@ body {
     border: none;
     border-radius: 50%;
 
-    background-color: red;
+    background-color: #1a73e8;
     color: white;
 
     font-size: 18px;
@@ -161,8 +171,82 @@ body {
     font-size: 16px;
 }
 
-.mic {
-    font-size: 18px;
+.search-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    padding: 7px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #4285f4;
+    cursor: pointer;
+}
+
+.image-search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    flex: 0 0 36px;
+    padding: 7px;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    cursor: pointer;
+}
+
+.image-search:hover {
+    background-color: #f1f3f4;
+}
+
+.image-search:focus-visible {
+    outline: 2px solid #4285f4;
+    outline-offset: 2px;
+}
+
+.image-search svg {
+    width: 23px;
+    height: 23px;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.camera-body,
+.camera-top {
+    stroke: #4285f4;
+}
+
+.camera-lens {
+    stroke: #34a853;
+}
+
+.camera-flash {
+    stroke: #fbbc04;
+}
+
+.search-submit:hover {
+    background-color: #f1f3f4;
+}
+
+.search-submit:focus-visible {
+    outline: 2px solid #4285f4;
+    outline-offset: 2px;
+}
+
+.search-submit svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-width: 2;
 }
 
 
@@ -203,9 +287,26 @@ body {
 
 .shortcuts {
     display: flex;
+    align-items: flex-start;
     gap: 25px;
 
     margin-top: 45px;
+}
+
+.shortcut-item {
+    display: flex;
+    width: 68px;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+}
+
+.shortcut-label {
+    color: #fff;
+    font-size: 13px;
+    line-height: 1.2;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5);
 }
 
 .shortcut {
@@ -239,32 +340,42 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    color: white;
     text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .Google {
-    background-color: green;
+    background-color: #fff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .Youtube {
-    background-color: red;
+    background-color: #fff;
+    color: #ff0033;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .Facebook {
-    background-color: blue;
+    background-color: #1877f2;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.Google:hover,
+.Youtube:hover,
+.Facebook:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.28);
 }
 
 .shortcut-icon {
     display: flex;
     width: 48px;
     height: 48px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-family: Impact, sans-serif;
-    font-size: 20px;
-    color: inherit;
+    padding: 10px;
+}
+
+.facebook-icon {
+    padding: 0;
 }
 .whatsapp-btn {
   display: inline-block;

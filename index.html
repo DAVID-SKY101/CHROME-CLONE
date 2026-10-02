@@ -31,15 +31,30 @@
             href="https://www.google.com/intl/en/about/products"
             target="_blank"
             class="apps-button"
+            aria-label="Google apps"
+            rel="noopener noreferrer"
         >
-            ☷
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="5" cy="5" r="1.7"></circle>
+                <circle cx="12" cy="5" r="1.7"></circle>
+                <circle cx="19" cy="5" r="1.7"></circle>
+                <circle cx="5" cy="12" r="1.7"></circle>
+                <circle cx="12" cy="12" r="1.7"></circle>
+                <circle cx="19" cy="12" r="1.7"></circle>
+                <circle cx="5" cy="19" r="1.7"></circle>
+                <circle cx="12" cy="19" r="1.7"></circle>
+                <circle cx="19" cy="19" r="1.7"></circle>
+            </svg>
         </a>
 
         <!-- Google Account -->
         <a
-            href="https://myaccount.google.com/"
+            href="https://accounts.google.com/AccountChooser?continue=https%3A%2F%2Fmyaccount.google.com%2F"
             target="_blank"
             class="profile-button"
+            rel="noopener noreferrer"
+            aria-label="Choose or manage your Google Account"
+            title="Choose or manage your Google Account"
         >
             D
         </a>
@@ -71,9 +86,26 @@
         autocomplete="on"
     >
 
-    <span class="mic">🎤</span>
+    <button class="image-search" type="button" aria-label="Search by image" title="Search by image">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path class="camera-body" d="M4 7.5h3l1.5-2h7l1.5 2h3A1.5 1.5 0 0 1 21.5 9v9a1.5 1.5 0 0 1-1.5 1.5H4A1.5 1.5 0 0 1 2.5 18V9A1.5 1.5 0 0 1 4 7.5Z"></path>
+            <circle class="camera-lens" cx="12" cy="13" r="4"></circle>
+            <path class="camera-flash" d="M18 10h.01"></path>
+            <path class="camera-top" d="M8.5 5.5 7 7.5"></path>
+        </svg>
+    </button>
+
+    <button class="search-submit" type="submit" aria-label="Search Google">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="10.8" cy="10.8" r="6.8"></circle>
+            <path d="m16 16 5 5"></path>
+        </svg>
+    </button>
 
 </form>
+        <form id="image-search-form" action="https://www.google.com/searchbyimage/upload" method="POST" enctype="multipart/form-data" hidden>
+            <input id="image-search-file" type="file" name="encoded_image" accept="image/*">
+        </form>
         </div>
 
 
@@ -92,25 +124,60 @@
         <!-- Shortcuts -->
         <div class="shortcuts">
 
-    <a class="Google" href="https://www.google.com" target="_blank">
-        <div class="shortcut-icon">G</div><br>
-    </a>
+    <div class="shortcut-item">
+        <a class="Google" href="https://www.google.com" target="_blank" rel="noopener noreferrer" aria-label="Google">
+            <svg class="shortcut-icon google-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11a9.4 9.4 0 0 1-4.1 6.2v5.1h6.6c3.9-3.6 6.1-8.8 6.1-15Z"/>
+                <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.6-5.1c-1.8 1.2-4.1 1.9-6.9 1.9-5.3 0-9.8-3.6-11.4-8.4H5.8v5.3A20 20 0 0 0 24 44Z"/>
+                <path fill="#FBBC05" d="M12.6 27.6a12 12 0 0 1 0-7.2v-5.3H5.8a20 20 0 0 0 0 17.8l6.8-5.3Z"/>
+                <path fill="#EA4335" d="M24 12c3 0 5.7 1 7.8 3.1l5.9-5.9C34.1 5.8 29.5 4 24 4A20 20 0 0 0 5.8 15.1l6.8 5.3C14.2 15.6 18.7 12 24 12Z"/>
+            </svg>
+        </a>
+        <span class="shortcut-label">Google</span>
+    </div>
 
-    <a class="Youtube" href="https://www.youtube.com" target="_blank">
-        <div class="shortcut-icon">▶</div>
-    </a>
+    <div class="shortcut-item">
+        <a class="Youtube" href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg class="shortcut-icon youtube-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="3" y="9" width="42" height="30" rx="9" fill="currentColor"/>
+                <path d="m20 17 12 7-12 7V17Z" fill="#fff"/>
+            </svg>
+        </a>
+        <span class="shortcut-label">YouTube</span>
+    </div>
 
-    <a class="Facebook" href="https://www.facebook.com" target="_blank">
-        <div class="shortcut-icon">F</div>
-    </a>
-    <a href="https://wa.me/" target="_blank" class="whatsapp-btn">
-  <i class="fab fa-whatsapp"></i>
-    </a>
+    <div class="shortcut-item">
+        <a class="Facebook" href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg class="shortcut-icon facebook-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <circle cx="24" cy="24" r="24" fill="currentColor"/>
+                <path fill="#fff" d="M27.3 41V26.2h5l.8-5.8h-5.8v-3.7c0-1.7.5-2.8 2.9-2.8h3.1V8.7c-.5-.1-2.4-.2-4.5-.2-4.5 0-7.6 2.7-7.6 7.8v4.1h-5.1v5.8h5.1V41h6.1Z"/>
+            </svg>
+        </a>
+        <span class="shortcut-label">Facebook</span>
+    </div>
+    <div class="shortcut-item">
+        <a href="https://wa.me/" target="_blank" class="whatsapp-btn" rel="noopener noreferrer" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </a>
+        <span class="shortcut-label">WhatsApp</span>
+    </div>
     
 </div>
         </div>
 
     </main>
 
+    <script>
+        const imageSearchButton = document.querySelector(".image-search");
+        const imageSearchFile = document.querySelector("#image-search-file");
+        const imageSearchForm = document.querySelector("#image-search-form");
+
+        imageSearchButton.addEventListener("click", () => imageSearchFile.click());
+        imageSearchFile.addEventListener("change", () => {
+            if (imageSearchFile.files.length > 0) {
+                imageSearchForm.submit();
+            }
+        });
+    </script>
 </body>
 </html>
